@@ -13,14 +13,37 @@ public class Emp{
         this.salary = salary;
     }
 
+    public void getDetails(int i, String n, String dt, double s){
+        id = i; name = n; dept = dt; salary = s;
+    }
+
     public void display(){
+        System.out.println("** Employee details **\n--------------------------------------------------------------");
         System.out.println("Employee ID : "+ id);
         System.out.println("Employee name : "+ name);
         System.out.println("Employee department : "+ dept);
-        System.out.println("Employee salary : "+ salary);
+        System.out.println("Employee salary : "+ salary+ "\n\n");
     }
     public static void main(String[] args){
-        Emp e = new Emp(123, "Surya", "Software DevOps", 10000000);
-        e.display();
+        Emp e1 = new Emp(101, "Surya", "Software DevOps", 10000000);
+        Emp e2 = new Emp(102, "Shreya", "HR", 20000000);
+        e1.display();
+        e2.display();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter id:");
+        int id = sc.nextInt();
+sc.nextLine();
+        System.out.print("enter name: ");
+        String name = sc.nextLine();
+
+        System.out.print("enter department: ");
+        String dept = sc.nextLine();
+
+        System.out.print("enter salary:");
+        float salary = sc.nextFloat();
+
+        Emp e3 = new Emp(id, name, dept, salary);
+        e3.display();
+        
     }
 }
